@@ -1,7 +1,7 @@
 tclws
 =====
 
-tcl core ws fork
+TCL Core mirror - Web Services for Tcl (aka tclws)
 ###Synopsis
 
 ```tcl
