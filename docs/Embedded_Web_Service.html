@@ -1,0 +1,82 @@
+<HTML lang=en dir=ltr xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>Embeding a Web Service</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=utf-8">
+<META content="Embeding a Web Service" name=KEYWORDS>
+<link rel="stylesheet" href="style.css" type="text/css" media="screen">
+</HEAD>
+<BODY>
+<H1>Embeding a Web Service</H1>
+
+<TABLE class=toc id=toc>
+  <TR>
+    <TD>
+      <DIV id=toctitle>
+      <H2>Contents</H2></DIV>
+      <UL>
+        <LI class=toclevel-1><A href="#Loading_the_Webservices_Embedded_Package"><SPAN
+        class=tocnumber>1</SPAN> <SPAN class=toctext>Loading the Webservices
+        Embedded Package</SPAN></A>
+        <LI class=toclevel-1><A href="#Listen"><SPAN
+        class=tocnumber>2</SPAN> <SPAN class=toctext>Specify a Port to Receive Request on</SPAN></A>
+        <LI class=toclevel-1><A href="#EventQueue"><SPAN
+        class=tocnumber>3</SPAN> <SPAN class=toctext>Enter the event queue</SPAN></A>
+        <LI class=toclevel-1><A href="#Stop"><SPAN
+        class=tocnumber>4</SPAN> <SPAN class=toctext>Shutdown server</SPAN></A>
+      </UL>
+    </TD>
+  </TR>
+</TABLE>
+
+<A name=Loading_the_Webservices_Embedded_Package></A>
+<H2>Loading the Webservices Server Package </H2>
+
+<P>To load the webservices server package, do: </P><PRE> package require WS::Embedded
+</PRE>
+<P>This command will only load the server the first time it is used, so it
+causes no ill effects to put this in each file declaring a service or service
+procedure. </P>
+
+<HR />
+
+<A name=Listen></A>
+<H2>Specify a Port to Receive Request on</H2>
+
+<P><B>Procedure Name&nbsp;: <I>::WS::Embeded::Listen</I></B> </P>
+<P><B>Description</B>&nbsp;: Instruct the module to listen on a Port, security information.
+<P><B>Arguments</B>&nbsp;: this procedure uses position dependent arguments,
+they are: </P>
+<PRE>
+     <I>port    </I> -- Port number to listen on.
+     <I>certfile</I> -- Name of the certificate file. Defaults to {}.
+     <I>keyfile </I> -- Name of the key file. Defaults to {}.
+     <I>userpwds</I> -- A list of username:password. Defaults to {}.
+     <I>realm   </I> -- The seucrity realm. Defaults to {}.
+</PRE>
+<P><B>Returns</B>&nbsp;: Handle of socket </P>
+<P><B>Side-Effects</B>&nbsp;: None </P>
+<P><B>Exception Conditions</B>&nbsp;: &nbsp;: None </P>
+<P><B>Pre-requisite Conditions</B>&nbsp;: None </P>
+<HR />
+
+<A name=EventQueue></A>
+<H2>Enter the event queue</H2>
+
+<P>To serve any requests, the interpreter must enter the event queue using, for example:</P>
+<PRE>
+     vwait waitVariable
+</PRE>
+<HR />
+
+<A name=Stop></A>
+<H2>Stop the server</H2>
+
+<P>To stop serving requests, the server socket may be closed.
+The socket handle was returned by <I>::WS::Embeded::Listen</I>.
+Optionally, the event queue may be stopped as follows:</P>
+<PRE>
+     close $handle
+     set waitVariable 1
+</PRE>
+</BODY>
+</HTML>
