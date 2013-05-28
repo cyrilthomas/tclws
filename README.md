@@ -1,7 +1,7 @@
-tclws
-=====
+Web Services for Tcl (aka tclws)
+================================
 
-TCL Core mirror - Web Services for Tcl (aka tclws)
+
 ###Synopsis
 
 ```tcl
