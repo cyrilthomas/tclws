@@ -3,7 +3,12 @@ Web Services for Tcl (aka tclws)
 
 
 ###Synopsis
+The distribution provides both client side access to Web Services and server side creation of Web Services. 
+Currently only document/literal and rpc/encoded with HTTP Soap transport are supported on the client side. 
+The server side currently works only with TclHttpd or embedded into an application. 
+The server side provides all services as document/literal over HTTP Soap transport.
 
+#### SOAP Client
 ```tcl
 package require WS::Client
 
@@ -28,3 +33,5 @@ puts [dict get $result GetGeoIPResult CountryName]
 # Returns
 #   United States
 ```
+
+More documentations here http://core.tcl.tk/tclws/doc/tip/docs/index.html
