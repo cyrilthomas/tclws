@@ -26,8 +26,11 @@ package require autoproxy
 #   ::GeoIPService::GetGeoIP IPAddress
 #   ::GeoIPService::GetGeoIPContext {}
 
-# Do you also need to collect the attributes? set the parseInAttr parameter
+# Collect the attributes from the response? use the parseInAttr parameter
 # ::WS::Utils::SetOption parseInAttr 1
+
+# Unclear usage - Send attributes in requests? use the genOutAttr parameter
+# ::WS::Utils::SetOption genOutAttr 1
 
 # Call the function of the service
 ::set result [::GeoIPService::GetGeoIP xx.xxx.xx.xx]
