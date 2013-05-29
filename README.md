@@ -12,6 +12,10 @@ The server side provides all services as document/literal over HTTP Soap transpo
 ```tcl
 package require WS::Client
 
+# Use enviromental proxy settings if available
+package require autoproxy
+::autoproxy::init
+
 # Grok the service, and generate stubs
 ::WS::Client::GetAndParseWsdl "http://www.webservicex.net/geoipservice.asmx?wsdl"
 
