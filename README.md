@@ -16,10 +16,9 @@ package require WS::Client
 package require autoproxy
 ::autoproxy::init
 
+set header [dict create]
 # Authentication required? Include header elements in a dict
 # dict set header Authorization "Basic [base64::encode $user:$pass]"
-
-set header [dict create]
 
 # Grok the service, and generate stubs
 ::WS::Client::GetAndParseWsdl "http://www.webservicex.net/geoipservice.asmx?wsdl" $header
