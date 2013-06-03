@@ -38,7 +38,7 @@ set header [dict create]
 # ::WS::Utils::SetOption genOutAttr 1
 
 # Call the function of the service
-::set result [::GeoIPService::GetGeoIP xx.xxx.xx.xx]
+set result [::GeoIPService::GetGeoIP xx.xxx.xx.xx]
 
 puts $result
 # Returns a dictionary result
